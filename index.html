@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Geek Tech </title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- preload images -->
+  <link rel="preload" as="image" href="./assets/images/logo.png">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-1.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-2.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-3.jpg">
+
+  <style>
+    /* Basic styles for the chatbot */
+    #chatbot {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 300px;
+      border: 1px solid #5b42be;
+      border-radius: 10px;
+      display: none; /* Initially hidden */
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #chat-header {
+      background-color: #6258ebea;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    #chatbox {
+      height: 300px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+
+    #user-input {
+      display: flex;
+      padding: 10px;
+    }
+
+    #user-input input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #user-input button {
+      padding: 10px;
+      margin-left: 5px;
+      background-color: #3f3277ab;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- #HEADER -->
+  <header class="header">
+    <div class="alert">
+      <div class="container">
+        <p class="alert-text">Transforming Ideas into Digital Reality</p>
+      </div>
+    </div>
+
+    <div class="header-top" data-header>
+      <div class="container">
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+
+        <div class="input-wrapper">
+          <input type="search" name="search" placeholder="Search here" class="search-field">
+          <button class="search-submit" aria-label="search">
+            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing">
+        </a>
+
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li>
+              <a href="#home" class="navbar-link has-after">Home</a>
+            </li>
+            <li>
+              <a href="#collection" class="navbar-link has-after">Career</a>
+            </li>
+            <li>
+              <a href="#about" class="navbar-link has-after">About</a>
+            </li>
+            <li>
+              <a href="#company" class="navbar-link has-after">Company</a> 
+            </li>
+            <li>
+              <a href="#contact" class="navbar-link has-after">Contact</a> <!-- Changed Blog to Contact -->
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- #MOBILE NAVBAR -->
+  <div class="sidebar">
+    <div class="mobile-navbar" data-navbar>
+      <div class="wrapper">
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing">
+        </a>
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+      <ul class="navbar-list">
+        <li>
+          <a href="#home" class="navbar-link" data-nav-link>Home</a>
+        </li>
+        <li>
+          <a href="#collection" class="navbar-link" data-nav-link>Career</a>
+        </li>
+        <li>
+          <a href="#about" class="navbar-link" data-nav-link>About</a>
+        </li>
+        <li>
+          <a href="#company" class="navbar-link" data-nav-link>Company</a> <!-- Updated -->
+        </li>
+        <li>
+          <a href="#contact" class="navbar-link" data-nav-link>Contact</a> <!-- Updated -->
+        </li>
+      </ul>
+    </div>
+    <div class="overlay" data-nav-toggler data-overlay></div>
+  </div>
+
+  <main>
+    <article>
+      <!-- #HERO -->
+      <section class="section hero" id="home" aria-label="hero" data-section>
+        <div class="container">
+          <ul class="has-scrollbar">
+            <li class="scrollbar-item">
+              <div class="hero-card has-bg-image" style="background-image: url('./assets/images/hero-banner-1.jpeg')">
+                <div class="card-content">
+                  <h1 class="h1 hero-title">
+                    <h1><b><i>GEEK TECH </b></i></h1><br>
+                    <b>It is the great innovative space for TechNest's</b>
+                  </h1>
+                  <p class="hero-text">
+                    <b>"Geek is a dynamic IT company specializing in innovative technology solutions and software development.<br>
+                    With a customer-centric approach, we provide tailored services that empower businesses to thrive 
+                    in the digital landscape."</b>
+                  </p>
+                </div>
+                <div id="chatbot">
+                  <div id="chat-header">Chatbot</div>
+                  <div id="chatbox"></div>
+                  <div id="user-input">
+                    <input type="text" id="user-message" placeholder="Type message with hello...">
+                    <button id="send-button">Send</button>
+                  </div>
+                </div>
+                <button id="toggle-chatbot" style="position: fixed; right: 40px; bottom: 230px; padding: 20px; background-color: #2b2d9c83; color: white; border: none; border-radius: 7px; cursor: pointer;">CHAT-BOAT</button>
+              </div>
+            </li>
+            <!-- Additional hero cards can go here -->
+          </ul>
+        </div>
+      </section>
+      <section class="section collection" id="collection" aria-label="collection" data-section>
+        <div class="container">
+          <h2 class="h2 section-title">Career Opportunities</h2>
+          <p>Explore exciting career opportunities at Geek Tech.</p>
+          <ul class="collection-list">
+            <li>
+              <div class="collection-card has-before hover:shine">
+                <h2 class="h2 card-title">Company Culture</h2>
+                <a href="#" class="btn-link">
+                  <span class="span">Learn more</span>
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+                <div class="has-bg-image" style="background-image: url('./assets/images/collection-1.jpeg')"></div>
+              </div>
+            </li>
+            <li>
+              <div class="collection-card has-before hover:shine">
+                <h2 class="h2 card-title">Coding Hub</h2>
+                <p class="card-text">Join our team of innovators.</p>
+                <a href="#" class="btn-link">
+                  <span class="span">Hackathons by Geek Team</span>
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+                <div class="has-bg-image" style="background-image: url('./assets/images/collection-2.jpeg')"></div>
+              </div>
+            </li>
+            <li>
+              <div class="collection-card has-before hover:shine">
+                <h2 class="h2 card-title">Achievements</h2>
+                <p class="card-text">Our team has made significant contributions.</p>
+                <a href="#" class="btn-link">
+                  <span class="span">See our achievements</span>
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+                <div class="has-bg-image" style="background-image: url('./assets/images/collection-3.jpeg')"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+<!-- #ABOUT SECTION -->
+<section class="section about" id="about" aria-label="about" data-section>
+    <div class="container">
+        <h2 class="h2 section-title">About Us</h2>
+        <p>Geek Tech is committed to delivering innovative solutions that empower businesses to excel in the digital age. Our team of experts works tirelessly to ensure that we meet the unique needs of our clients.</p>
+        <p>We believe in fostering a culture of creativity and collaboration, where every team member can contribute to our mission of transforming ideas into reality.</p>
+        
+        <div class="about-images" style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <img src="./assets/images/banner-1.png" alt="About Image 1" style="width: 48%; border-radius: 8px;">
+            <img src="./assets/images/banner-2.jpeg" alt="About Image 2" style="width: 48%; border-radius: 8px;">
+        </div>
+    </div>
+</section>
+
+     <!-- #COMPANY SECTION -->
+<section class="section company" id="company" aria-label="company" data-section>
+  <div class="container">
+      <h2 class="h2 section-title">Company Overview</h2><br>
+      <br>
+      <p>Our company is dedicated to providing exceptional services and products that meet the needs of our clients. We pride ourselves on our commitment to quality and innovation.</p>
+      <br><br><br>
+      <div class="company-images" style="display: flex; justify-content: space-between; margin-top: 20px;">
+          <img src="./assets/images/company-1.png" alt="Company Overview Image 1" style="width: 48%; border-radius: 8px;">
+          <img src="./assets/images/company2.jpeg" alt="Company Overview Image 2" style="width: 48%; border-radius: 8px;">
+          <img src="./assets/images/company 3.jpeg" alt="Company Overview Image 2" style="width: 48%; border-radius: 8px;">
+      </div>
+  </div>
+</section>
+      <!-- #CONTACT SECTION -->
+      <section class="section contact" id="contact" aria-label="contact" data-section>
+        <div class="container">
+          <h2 class="h2 section-title">Contact Us</h2>
+          <p>If you have any questions or inquiries, please reach out to us:</p>
+          <p>Email: contact@geek.com</p>
+          <p>Phone: +1 (123) 456-7890</p><br><br>
+          <div class="company-images" style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <div style="text-align: center; width: 30%;">
+                <img src="./assets/images/feature-1.png" alt="Company Overview Image 1" style="width: 100%; border-radius: 8px;">
+                <br><p>Trust</p>
+                <p>Geek Tech is dedicated to building trust with our clients through reliable services and transparent practices.We prioritize customer satisfaction and strive to exceed expectations in every interaction</p>
+            </div>
+            <div style="text-align: center; width: 30%;">
+                <img src="./assets/images/feature-2.png" alt="Company Overview Image 2" style="width: 100%; border-radius: 8px;">
+                <br><p>Growth</p>
+              <p>Geek Tech has experienced significant growth by consistently delivering innovative solutions and exceptional customer service. </p>
+            </div>
+            <div style="text-align: center; width: 30%;">
+                <img src="./assets/images/feature-3.png" alt="Company Overview Image 3" style="width: 100%; border-radius: 8px;">
+                <br><p>Innovation</p>
+                <p>At Geek Tech, innovation is at the core of our mission, driving us to develop cutting-edge solutions that meet the evolving needs of our clients. </p>
+            </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- Other sections like Career, About, etc. can go here -->
+
+    </article>
+  </main>
+
+  <!-- #FOOTER -->
+  <footer class="footer" data-section>
+    <div class="container">
+      <div class="footer-top">
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Geek Tech</p>
+          </li>
+          <li>
+            <p class="footer-list-text">Find a location nearest you. See <a href="#"></a></p>
+          </li>
+          <li>
+            <p class="footer-list-text bold">+391 2568 4593</p>
+          </li>
+          <li>
+            <p class="footer-list-text">Geek
+              <p class="footer-list-text">Geek@Desk.co.in</p>
+            </li>
+          </ul>
+  
+          <ul class="footer-list">
+            <li>
+              <p class="footer-list-title">Information</p>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Start a Return</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Contact Us :080 0123 8114 </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Terms & Conditions </a>
+              <p>By using our site, you agree to our Terms and Conditions and acknowledge our liability limitations.</p>
+              </section>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="footer-bottom">
+          <div class="wrapper">
+            <p class="copyright">
+              &copy; 2023 Geek. All rights reserved. | Empowering businesses with innovative IT solutions.
+            </p>
+  
+            <ul class="social-list">
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
+  
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" width="179" height="26" loading="lazy" alt="Glowing">
+          </a>
+        </div>
+      </div>
+  
+      <!-- Chatbot Script -->
+      <script>
+        // Function to toggle chatbot visibility
+        const toggleChatbot = () => {
+            const chatbot = document.getElementById('chatbot');
+            chatbot.style.display = chatbot.style.display === 'none' ? 'block' : 'none';
+        };
+  
+        // Function to create chat message
+        const createChatMessage = (message, isUser ) => {
+            const chatbox = document.getElementById('chatbox');
+            const messageDiv = document.createElement('div');
+            messageDiv.style.margin = '5px 0';
+            messageDiv.style.padding = '10px';
+            messageDiv.style.borderRadius = '5px';
+            messageDiv.style.backgroundColor = isUser  ? '#e1ffc7' : '#f1f1f1';
+            messageDiv.innerText = message;
+            chatbox.appendChild(messageDiv);
+            chatbox.scrollTop = chatbox.scrollHeight; // Scroll to the bottom
+        };
+  
+        // Function to generate a response
+        const generateResponse = (userMessage) => {
+            let botResponse = "I didn't understand that.";
+            if (userMessage.toLowerCase().includes("hello")) {
+                botResponse = "Hi there! for help type 1.help  2.details  3.bye";
+            } else if (userMessage.toLowerCase().includes("1")) {
+                botResponse = "I'm just a bot, but I'm here to help!";
+            } else if (userMessage.toLowerCase().includes("3")) {
+                botResponse = "Goodbye! Have a great day!";
+            } else if (userMessage.toLowerCase().includes("2")) {
+                botResponse = "You are a part of this company and we are glad to meet you.";
+            } else if (userMessage.toLowerCase().includes("1")) {
+                botResponse = "To get all details, please contact help@geek.co.in or call +123000 2018.";
+            }
+            createChatMessage(botResponse, false);
+        };
+  
+        // Event listener for send button
+        document.getElementById('send-button').addEventListener('click', () => {
+            const userMessage = document.getElementById('user-message').value.trim();
+            if (userMessage) {
+                createChatMessage(userMessage, true);
+                document.getElementById('user-message').value = ''; // Clear input field
+                generateResponse(userMessage);
+            }
+        });
+  
+        // Event listener for toggle button
+        document.getElementById('toggle-chatbot').addEventListener('click', toggleChatbot);
+      </script>
+    </footer>
+  
+    <!-- #BACK TO TOP -->
+    <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+      <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+    </a>
+  
+    <!-- custom js link -->
+    <script src="./assets/js/script.js" defer></script>
+  
+    <!-- ionicon link -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  </body>
+  
+  </html>
